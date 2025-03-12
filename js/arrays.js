@@ -46,10 +46,26 @@ points.sort(function (a, b) { return a - b });
 document.writeln(points);
 
 const studentat = [
-    ["1", "2", "3"],
+    ["1", "2", "3","test","test 1"],
     ["4", "5", "6"],
     ["7", "8", "9"]
 ];
 
-document.writeln(`<p>Ant. 1 ${studentat[1][1]}</p>`)
+document.writeln(`<p>Ant. 1 ${studentat[1][1]}</p>`);
+
+
+//leximi i vargut 2d
+
+
+for (let i = 0; i < studentat.length; i++) {
+
+    for (let j = 0; j < studentat[i].length; j++) {
+
+        document.writeln(`${studentat[i][j]} `)
+    }
+    document.writeln("<br>");
+}
+
+
+
 

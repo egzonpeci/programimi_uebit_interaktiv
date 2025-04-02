@@ -8,13 +8,7 @@ let objData = {
 // document.writeln(objData);
 
 console.log(objData);
-
-
-
-
-
 //krijimi i klasave
-
 
 // class `name` {
 //     constructor(parameters) {
@@ -72,16 +66,15 @@ class Posts {
     }
 
     static generatAlert(obj) {
-        document.writeln(`
+        document.body.innerHTML += `
               <div class="alert alert-success">
                  Title: ${obj.title} <br>
                  Body: ${obj.body} & ${obj.userid}
               </div>
-            `);
+            `;
     }
 
 }
-
 
 // fetch('https://jsonplaceholder.typicode.com/posts')
 fetch('posts.json')
@@ -92,3 +85,67 @@ fetch('posts.json')
             Posts.generatAlert(new_obj);
         }
     });
+
+
+
+class Car {
+    constructor(name) {
+        this.emri = name;
+    }
+
+    getName() {
+        return `Name ${this.emri}, i vetures`;
+    }
+}
+
+
+class Model extends Car {
+    constructor(vetura, modeli) {
+        super(vetura)
+        this.modeli = modeli;
+    }
+
+    getModel() {
+        return this.getName() + " dhe modeli " + this.modeli;
+    }
+}
+
+
+let car_obj = new Car("vetura_1");
+console.log(car_obj.getName());
+
+
+
+let newModel_obj = new Model("test", "modeli_1");
+console.log(newModel_obj.getModel());
+
+
+
+
+
+
+class BaseEntity {
+    constructor(isactive, createddate) {
+        this.isactive = isactive;
+        this.createddate = createddate;
+    }
+}
+
+class Qyteti extends BaseEntity {
+    constructor(id, name, isactive, createddate) {
+        super(isactive, createddate)
+        this.id = id;
+        this.name = name;
+
+    }
+}
+class Studentat extends BaseEntity {
+    constructor(id, fullname, level, isactive, createddate) {
+        super(isactive, createddate)
+        this.id = id;
+        this.name = fullname;
+        this.level = level;
+    }
+}
+
+

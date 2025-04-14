@@ -1,0 +1,22 @@
+[
+    {
+        "Id":1,
+        "Name":"Kosove"
+    },
+    {
+        "Id":2,
+        "Name":"Shqiperi"
+    },
+    {
+        "Id":3,
+        "Name":"Maqedoni"
+    },
+    {
+        "Id":4,
+        "Name":"Serbi"
+    },
+    {
+        "Id":5,
+        "Name":"Kroaci"
+    }
+]

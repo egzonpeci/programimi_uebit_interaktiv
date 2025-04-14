@@ -1,0 +1,22 @@
+[
+    {
+        "Id": 1,
+        "Name": "Prishtine",
+        "StateId": 1
+    },
+    {
+        "Id": 2,
+        "Name": "Tirane",
+        "StateId": 2
+    },
+    {
+        "Id": 3,
+        "Name": "Vlore",
+        "StateId": 2
+    },
+    {
+        "Id": 4,
+        "Name": "Tetove",
+        "StateId": 3
+    }
+]

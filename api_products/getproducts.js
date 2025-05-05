@@ -4,7 +4,7 @@ let products = localStorage.getItem("addToCart");
 let jsonObj = JSON.parse(products);
 
 
-document.getElementById("products").innerHTML=`
+document.getElementById("products").innerHTML = `
           <tr>
                     <th>#1</th>
                     <th>
@@ -15,3 +15,11 @@ document.getElementById("products").innerHTML=`
                 </tr>
 
 `;
+
+//get categories
+
+fetch("https://fakestoreapi.com/products/categories").then(res => res.json()).then(data => {
+        data.map(item => {
+            console.log(item)
+        })
+    })

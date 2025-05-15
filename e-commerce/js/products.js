@@ -79,6 +79,27 @@ $(document).ready(function () {
         }
         else {
             let objProducts = JSON.parse(localStorage.getItem("products-cart"));
+
+            //check products if exists
+
+            let objExists = objProducts.filter(item => item.id == id);
+            if (objExists.length > 0) {
+
+                let oldProducts = objExists[0];
+                let newObj = {
+                    id: id,
+                    title: title,
+                    price: price,
+                    image: image,
+                    amount: (Number.parseInt(oldProducts.quantity) + 1) * oldProducts.price,
+                    quantity: Number.parseInt(oldProducts.quantity) + 1
+                };
+                //get all productst without current productID
+                let updateObject = objProducts.filter(item => item.id != id);
+                updateObject.push(newObj);
+                localStorage.setItem("products-cart", JSON.stringify(updateObject));
+                return;
+            }
             let newObj = {
                 id: id,
                 title: title,
@@ -90,6 +111,7 @@ $(document).ready(function () {
 
             objProducts.push(newObj);
             localStorage.setItem("products-cart", JSON.stringify(objProducts));
+            CountNrProduct();
         }
     });
 
@@ -97,6 +119,15 @@ $(document).ready(function () {
         let hasProduct = JSON.parse(localStorage.getItem("products-cart")) != null ? true : false;
         return hasProduct;
     }
+
+
+    function CountNrProduct() {
+        let productCart = JSON.parse(localStorage.getItem("products-cart"))
+        let count = productCart != null ? productCart.length : 0;
+        $("#nr_prod").text(count);
+    }
+
+    CountNrProduct();
 
 });
 

@@ -11,7 +11,13 @@
 <body>
 
     <div class="container">
-        <div class="row MT-2">
+        <div class="row mt-2">
+            <div class="col-6">
+                <a href="index.html">HOME</a>
+            </div>
+            <div class="col-6 text-end">
+                <a href="carts.html" id="remove_all">REMOVE ALL PRODUCTS</a>
+            </div>
             <div class="col-12 alert alert-info text-center">
                 PRODUCTS
             </div>
@@ -25,16 +31,21 @@
                     <th>#Title</th>
                     <th>#Quantity</th>
                     <th>#Price</th>
-                    <th>#Amount</th>
+                    <th colspan="2">#Amount</th>
                 </tr>
             </thead>
             <tbody id="prodcuts">
 
             </tbody>
+            <tfoot>
+                <tr class="text-end">
+                    <th colspan="4">Total: <span id="total"></span></th>
+                </tr>
+            </tfoot>
         </table>
     </div>
 
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="js/carts.js"></script>
 </body>
